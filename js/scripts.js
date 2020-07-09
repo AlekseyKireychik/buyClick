@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".header__link, .header__btn, .caption__btn").on("click", function (event) {
+  $(".caption__btn").on("click", function (event) {
     event.preventDefault();
     let id = $(this).attr("href"),
       top = $(id).offset().top - 50;
@@ -15,49 +15,53 @@ $(document).ready(function () {
     $(".header__top").toggleClass("is-active");
     $("body").toggleClass("is-active");
   });
+
+  $(".check__block-input").on("click", function (event) {
+    $(this).closest(".products__item").toggleClass("checked");
+  });
   
-  $.extend($.validator.messages, {
-    required: "Error"
-  });
+  // $.extend($.validator.messages, {
+  //   required: "Error"
+  // });
 
-  $("#form__footer").validate({
-    rules: {
-      name: {
-        required: true
-      },
-      email: {
-        required: true,
-        email: true
-      },
-      mes: {
-        required: true
-      }
-    }
-  });
+  // $("#form__footer").validate({
+  //   rules: {
+  //     name: {
+  //       required: true
+  //     },
+  //     email: {
+  //       required: true,
+  //       email: true
+  //     },
+  //     mes: {
+  //       required: true
+  //     }
+  //   }
+  // });
 
-  $(".submit").one("click", function () {
-    if ($("#form__footer").valid() == true) {
-      $("#form__footer").submit(function (e) {
-        e.preventDefault();
-        var thisForm = $(this);
-        var data = new FormData(thisForm[0]);
-        $.ajax({
-          url: "mail.php",
-          data: data,
-          processData: false,
-          contentType: false,
-          cache: false,
-          type: "POST",
-          success: function () {
-            alert("The message was sent!");
-            $("#form__footer")[0].reset();
-          },
-          error: function () {
-            alert("The message is not sent!");
-            $("#form__footer")[0].reset();
-          }
-        });
-      });
-    }
-  });
+  // $(".submit").one("click", function () {
+  //   if ($("#form__footer").valid() == true) {
+  //     $("#form__footer").submit(function (e) {
+  //       e.preventDefault();
+  //       var thisForm = $(this);
+  //       var data = new FormData(thisForm[0]);
+  //       $.ajax({
+  //         url: "mail.php",
+  //         data: data,
+  //         processData: false,
+  //         contentType: false,
+  //         cache: false,
+  //         type: "POST",
+  //         success: function () {
+  //           alert("The message was sent!");
+  //           $("#form__footer")[0].reset();
+  //         },
+  //         error: function () {
+  //           alert("The message is not sent!");
+  //           $("#form__footer")[0].reset();
+  //         }
+  //       });
+  //     });
+  //   }
+  // });
 });
