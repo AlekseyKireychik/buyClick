@@ -19,7 +19,18 @@ $(document).ready(function () {
   $(".check__block-input").on("click", function (event) {
     $(this).closest(".products__item").toggleClass("checked");
   });
-  
+
+  if ($(document).scrollTop() > $(".fixed-top").height()) {
+    $(".fixed-top").toggleClass("scrolled");
+  }
+
+  $(window).on("scroll", function() {
+    $(".container__header").toggleClass(
+      "scrolled",
+      $(this).scrollTop() > $(".container__header").height() * 2
+    );
+  });
+
   // $.extend($.validator.messages, {
   //   required: "Error"
   // });

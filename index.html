@@ -22,7 +22,7 @@
         <div class="container">
           <div class="header row">
             <div class="header__logo">
-              <a href="#">
+              <a href="./">
                 <img
                   class="header__logoimg"
                   src="img/logo.svg"
@@ -33,7 +33,7 @@
             <nav class="header__nav">
               <ul class="header__list-nav">
                 <li class="header__item">
-                  <a href="#" class="header__link">
+                  <a href="./" class="header__link">
                     <svg
                       width="24"
                       height="24"
@@ -50,7 +50,7 @@
                   >
                 </li>
                 <li class="header__item">
-                  <a href="/login.html" class="header__link">
+                  <a href="./login.html" class="header__link">
                     <svg
                       width="24"
                       height="24"
@@ -67,7 +67,7 @@
                   >
                 </li>
                 <li class="header__item">
-                  <a href="/register.html" class="header__link">
+                  <a href="./register.html" class="header__link">
                     <svg
                       width="24"
                       height="24"
@@ -118,7 +118,7 @@
       </section>
       <section class="about container" id="about">
         <div class="row">
-          <img src="./img/forth.jpg" alt="WITH BUY-CLICKS YOU CAN" />
+          <div class="about__img"></div>
           <div class="about__description">
             <div class="about__description-top">
               <h2 class="title">WHAT IS BUY-CLICKS?</h2>
@@ -182,7 +182,7 @@
           <div class="row products__top">
             <h2 class="title">BUY THE CLICKS</h2>
             <p class="description">
-              Choose the audience you need and buy any amount of clicks
+              Choose the audience you need and <strong>buy any amount of clicks</strong>
             </p>
           </div>
           <div class="row">
@@ -210,59 +210,63 @@
                       <label class="check__block-label" for="check-01"></label>
                     </div>
                   </div>
-                  <div class="products__item-td description">
-                    <h3>SIMPLE</h3>
-                    <p>Any users from any country of the world</p>
-                  </div>
-                  <div class="products__item-td price">
-                    $ 0,01<span>/ click</span>
-                  </div>
-                  <div class="products__item-td button-box">
-                    <button class="remove">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="value">$ 0,00</div>
-                    <button class="add">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 5V19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="products__item-td sum">
-                    $ 0,00
+                  <div class="products__item-td-content">
+                    <div class="products__item-td description">
+                      <div class="description__wrap"><h3>SIMPLE</h3><div class="price-inf">$ 0,01<span>/ click</span></div></div>
+                      <p>Any users from any country of the world</p>
+                    </div>
+                    <div class="products__item-td price">
+                      <div class="mobile-title">Price</div>
+                      <div class="price-inf">$ 0,01<span>/ click</span></div>
+                    </div>
+                    <div class="products__item-td button-box">
+                      <button class="remove">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <div class="value">$ 0,00</div>
+                      <button class="add">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 5V19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="products__item-td sum">
+                      <div class="mobile-title">Sum</div>
+                      <div class="vall">$ 0,00</div>
+                    </div>
                   </div>
                 </li>
                 <li class="products__item">
@@ -272,59 +276,66 @@
                       <label class="check__block-label" for="check-02"></label>
                     </div>
                   </div>
-                  <div class="products__item-td description">
-                    <h3>GEO</h3>
-                    <p>Any users from a specific country</p>
-                  </div>
-                  <div class="products__item-td price">
-                    $ 0,01<span>/ click</span>
-                  </div>
-                  <div class="products__item-td button-box">
-                    <button class="remove">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="value">$ 0,00</div>
-                    <button class="add">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 5V19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="products__item-td sum">
-                    $ 0,00
+                  <div class="products__item-td-content">
+                    <div class="products__item-td description">
+                      <div class="description__wrap">
+                        <h3>GEO</h3>
+                        <div class="price-inf">$ 0,01<span>/ click</span></div>
+                      </div>                      
+                      <p>Any users from a specific country</p>
+                    </div>
+                    <div class="products__item-td price">
+                      <div class="mobile-title">Price</div>
+                      <div class="price-inf">$ 0,01<span>/ click</span></div>
+                    </div>
+                    <div class="products__item-td button-box">
+                      <button class="remove">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <div class="value">$ 0,00</div>
+                      <button class="add">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 5V19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="products__item-td sum">
+                      <div class="mobile-title">Sum</div>
+                      <div class="vall">$ 0,00</div>
+                    </div>
                   </div>
                 </li>
                 <li class="products__item">
@@ -334,62 +345,69 @@
                       <label class="check__block-label" for="check-03"></label>
                     </div>
                   </div>
-                  <div class="products__item-td description">
-                    <h3>TA</h3>
-                    <p>
-                      Users determined by gender / age or interests from a
-                      particular country
-                    </p>
-                  </div>
-                  <div class="products__item-td price">
-                    $ 0,01<span>/ click</span>
-                  </div>
-                  <div class="products__item-td button-box">
-                    <button class="remove">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                    <div class="value">$ 0,00</div>
-                    <button class="add">
-                      <svg
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M12 5V19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                        <path
-                          d="M5 12H19"
-                          stroke="#9CA3B6"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                        />
-                      </svg>
-                    </button>
-                  </div>
-                  <div class="products__item-td sum">
-                    $ 0,00
+                  <div class="products__item-td-content">
+                    <div class="products__item-td description">
+                      <div class="description__wrap">
+                        <h3>TA</h3>
+                        <div class="price-inf">$ 0,01<span>/ click</span></div>
+                      </div>    
+                      <p>
+                        Users determined by gender / age or interests from a
+                        particular country
+                      </p>
+                    </div>
+                    <div class="products__item-td price">
+                      <div class="mobile-title">Price</div>
+                      <div class="price-inf">$ 0,01<span>/ click</span></div>
+                    </div>
+                    <div class="products__item-td button-box">
+                      <button class="remove">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                      <div class="value">$ 0,00</div>
+                      <button class="add">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M12 5V19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M5 12H19"
+                            stroke="#9CA3B6"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                    <div class="products__item-td sum">
+                      <div class="mobile-title">Sum</div>
+                      <div class="vall">$ 0,00</div>
+                    </div>
                   </div>
                 </li>
               </ul>
@@ -409,15 +427,17 @@
       <div class="container">
         <ul class="row footer__list">
           <li class="footer__item">
-            <a href="/terms-and-conditions.html">TERMS & CONDITIONS</a>
+            <a href="./terms-and-conditions.html">TERMS & CONDITIONS</a>
           </li>
           <li class="footer__item">
-            <a href="/our-returns-policy.html">Our Returns Policy</a>
+            <a href="./our-returns-policy.html">Our Returns Policy</a>
           </li>
           <li class="footer__item">
-            <a href="/written-communications.html">Written Communications</a>
+            <a href="./written-communications.html">Written Communications</a>
           </li>
-          <li class="footer__item"><a href="/contacts.html">Contacts</a></li>
+          <li class="footer__item">
+            <a href="./contacts.html">Contacts</a>
+          </li>
         </ul>
       </div>
     </footer>

@@ -74,8 +74,11 @@ body {
   line-height: 22px;
   color: #1C1B22;
 }
+body.is-active {
+  overflow: hidden;
+}
 main {  
-  min-height: calc(100vh - 170px);
+  min-height: calc(100vh - 100px);
   overflow: hidden;
 }
 .btn {
@@ -260,27 +263,30 @@ main {
 .title::before {
   position: absolute;
   content: "";
-  left: -16px;
-  top: 50%;
-  width: 40px;
-  height: 6px;
+  left: 0px;
+  top: 0;
+  width: 6px;
+  height: 100%;
   background: #2130BB;
-  transform: rotate(-90deg) translate(10%, 0px);
 }
   
 .container__header {
-  background: rgb(28,27,34);
-  background: linear-gradient(90deg, rgba(28,27,34,0.9475140397956058) 0%, rgba(49,49,50,0.9475140397956058) 16%, rgba(244,244,244,1) 100%);
+  background: rgba(0, 0, 0, 0.7);
 }
 .container__header.inner {
   background: #1C1B22;
 }
 .container__header.fixed-top {
-  position: relative;
+  position: absolute;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1030;
+}
+.container__header.fixed-top.scrolled {
+  position: fixed;  
+  animation-duration: 0.5s;
+  animation-name: menuFixed;
 }
 .header {
   display: flex;
@@ -328,7 +334,7 @@ main {
 }
 .header__link::before {
   content: "";
-  background-color: #2130BB;
+  background-color: transparent;
   width: 0%;
   height: 4px;
   position: absolute;
@@ -347,8 +353,9 @@ main {
 .header__link:focus::before,
 .header__link:active::before {
   left: 0%;
-  width: 100%;
-  transition: 0.3s;
+  width: 100%;  
+  transition: all 0.2s linear;  
+  background-color: #2130BB;
 }
 .header__link svg {
   margin-right: 13px;
@@ -401,29 +408,29 @@ main {
 .burger-menu__button {
   display: none;
   position: relative;
-  width: 59px;
-  height: 59px;
+  width: 52px;
+  height: 52px;
   cursor: pointer;
   z-index: 1000;
-  background: #fff;
+  background: transparent;
 }
 .burger-menu__lines {
   position: absolute;
-  width: 25px;
+  width: 20px;
   height: 2px;
   top: 47%;
   right: 50%;
   -webkit-transform: translate(50%);
   -ms-transform: translate(50%);
   transform: translate(50%);
-  background-color: #313B49;
+  background-color: #fff;
 }
 .burger-menu__lines::before {
   content: "";
   position: absolute;
-  width: 25px;
+  width: 20px;
   height: 2px;
-  background-color: #313B49;
+  background-color: #fff;
   top: 7px;
 }
 .burger-menu.is-active .burger-menu__lines {
@@ -434,14 +441,14 @@ main {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #313B49;
+  background-color: #fff;
 }
 .burger-menu__lines::after {
   content: "";
   position: absolute;
-  width: 25px;
+  width: 20px;
   height: 2px;
-  background-color: #313B49;
+  background-color: #fff;
   top: -7px;
 }
 .burger-menu.is-active .burger-menu__lines:after {
@@ -449,7 +456,7 @@ main {
   -webkit-transform: rotate(-45deg);
   -ms-transform: rotate(-45deg);
   transform: rotate(-45deg);
-  background-color: #313B49;
+  background-color: #fff;
 }
 
   
@@ -505,7 +512,7 @@ input.error {
   background-repeat: no-repeat;
   background-position: center right 75%;
   margin-top: 0px;
-  min-height: 652px;
+  min-height: 720px;
 }
 
 .caption__wrap {
@@ -556,8 +563,13 @@ input.error {
 .about .title {
   text-align: left;
 }
-.about img {
+.about__img {
+  background-image: url(../img/forth.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   max-width: 726px;
+  min-height: 792px;
   width: 100%;
 }
 .about .about__description {
@@ -661,9 +673,16 @@ input.error {
   background: #F6FAFF;
 }
 
-.products__content .products__item-td:nth-child(1) {
+/* .products__content .products__item-td:nth-child(1) {
   flex-basis: 11%;
+} */
+.products__item-td-content {
+  flex-basis: 89%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
+/* }
 .products__content .products__item-td:nth-child(2) {
   flex-basis: 32%;
   text-align: left;
@@ -679,12 +698,14 @@ input.error {
 .products__content .products__item-td:nth-child(5) {
   flex-basis: 19%;
   text-align: right;
-}
+} */
 .products__item-td.check {
   padding: 9px 0 9px 38px;
+  flex-basis: 11%;
 }
 .products__item-td.description{
   padding: 9px 60px 0 0;
+  flex-basis: 36.5%;
 }
 .products__item-td.description h3 {
   font-family: 'Lato', sans-serif;
@@ -713,14 +734,24 @@ input.error {
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  text-transform: uppercase;
   color: #1C1B22;
+  flex-basis: 20%;
+}
+.description__wrap .price-inf {
+  display: none;
+}
+.products__item-td.price .price-inf {
+  text-transform: uppercase;
+}
+.products__item-td.price .mobile-title {
+  display: none;
 }
 .products__item-td.price span {
   font-weight: 400;
   text-transform: lowercase;
 }
 .products__item-td.button-box {
+  flex-basis: 24%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -764,6 +795,11 @@ input.error {
 }
 .products__item-td.sum { 
   padding: 9px 35px 9px 0;
+  flex-basis: 21.4%;
+  text-align: right;
+}
+.products__item-td.sum .mobile-title {
+  display: none;
 }
 .products__footer {  
   border-top: 2px solid #FAFAFA;
@@ -801,6 +837,7 @@ input.error {
 }
 .inner__info {
   background: #fff;
+  padding-top: 68px;
 }
 .inner__info .account {
   padding-top: 70px;
@@ -821,8 +858,19 @@ input.error {
 .inner__content {
   padding: 50px 0 100px;
 }
-.inner__content .row {
+.inner__content .content {
   max-width: 760px;
+}
+.inner__content .form__content {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+}
+.inner__content .form__content .form__bottom-right {
+  width: 100%;
+}
+.inner__content .form__content .form__bottom-right .form__control {
+  width: 100%;
 }
 .inner__content ol {
   padding: 0 0 0 16px;
@@ -932,9 +980,6 @@ input.error {
 .form .form-check .form__check-input:checked + label::before {
   display: none;
 }
-.inner__content .register .row {
-  max-width: 100%;
-}
 .register__form .form__top {
   border-bottom: 4px solid #fff;
   padding-bottom: 32px;
@@ -970,8 +1015,11 @@ input.error {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
+}
+.register .form__bottom {
   padding-top: 50px;
 }
+
 .register .form__top-left, .register .form__bottom-left {
   margin-right: 125px;
 }
@@ -982,3 +1030,12 @@ input.error {
 
 /* inner pages end */
 
+
+@keyframes menuFixed {
+  from { 
+      opacity: 0;
+      top: -60px; }
+  to { 
+      opacity: 1;
+      top: 0px }
+}
